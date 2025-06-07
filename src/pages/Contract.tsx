@@ -1,10 +1,9 @@
 import { TonConnectButton } from "@tonconnect/ui-react";
 import { useMyContract } from "../hooks/useMyContract";
 import { useEffect, useState } from "react";
-import { toNano } from "ton-core";
 import { fromNano } from "@ton/core";
 import { useTonConnect } from "../hooks/useTonConnect";
-import { useTonClient } from "../hooks/useTonClient";
+
 
 function Contract() {
   const contract = useMyContract();

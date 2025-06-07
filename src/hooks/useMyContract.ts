@@ -3,7 +3,7 @@ import { useTonClient } from "./useTonClient";
 import { Address, type OpenedContract } from "@ton/core";
 import { useAsyncInitialize } from "./useAsyncInitialize";
 import { MyContract } from "../contracts/MyContract";
-import { address, toNano } from "@ton/core";
+import { toNano } from "@ton/core";
 import { useTonConnect } from "./useTonConnect";
 
 export function useMyContract() {
