@@ -15,6 +15,10 @@ function Contract() {
   let [lastTime, setLastTime] = useState<string>("Загрузка...");
   let [lastAccess, setLastAccess] = useState<string>("Загрузка...");
   let [lastBalance, setLastBalance] = useState<string>("Загрузка...");
+  const contract_address = () => {
+    const address_c = "kQBmfyvtydi0NBEofnMQHnbPcQW23jsD4SS2EnpoPU4C9EBh";
+    return `${address_c.slice(0, 5)}...${address_c.slice(43)}`;
+  };
   useEffect(() => {
     if (contract) {
       if (contract.message_text) {
@@ -46,7 +50,9 @@ function Contract() {
       }
 
       if (contract.message_time) {
-        setLastTime(contract.message_time.toString());
+        const unix_milis = contract.message_time * BigInt(1000);
+        const normal_time = new Date(Number(unix_milis));
+        setLastTime(normal_time.toLocaleString());
       }
 
       if (contract.contract_balance) {
@@ -64,13 +70,16 @@ function Contract() {
         <TonConnectButton />
       </div>
       <div>
-        <h2>Контракт</h2>
+        <h1>Контракт</h1>
+      </div>
+      <div>
+        <h2>Информация</h2>
       </div>
       <hr />
       <div>
         <b>Сообщение</b>
         <div className="Hint">{lastMessage}</div>
-        <div className="Hint">UNIX {lastTime}</div>
+        <div className="Hint">{lastTime}</div>
         <hr />
         <b>Отправитель</b>
         <div className="Hint">{lastSender}</div>
@@ -84,6 +93,38 @@ function Contract() {
         <b>Владелец</b>
         <div className="Hint">{lastOwner}</div>
         <hr />
+        <b>Адрес контракта</b>
+        <div className="Hint">{contract_address()}</div>
+        <hr />
+        <div>
+          <h2>Действия</h2>
+          {connected ? (
+            <>
+              <p>Отправить сообщение</p>
+              <button onClick={contract.sendMessage}>Отправить</button>
+              <hr />
+
+              <p>Удалить сообщение</p>
+              <button onClick={contract.sendDeleteMessage}>Удалить</button>
+              <hr />
+
+              <p>Изменить доступ</p>
+              <button onClick={contract.sendChangeAccess}>Изменить</button>
+              <hr />
+
+              <p>Внести TON в контракт</p>
+              <button onClick={contract.sendDeposit}>Внести 0.5 TON</button>
+              <hr />
+
+              <p>Вывести TON из контракта</p>
+              <button onClick={contract.sendWithdraw}>Вывести 0.5 TON</button>
+              <hr />
+            </>
+          ) : (
+            <p>Подключите кошелек, что бы увидеть действия</p>
+          )}
+        </div>
+        <div></div>
       </div>
     </div>
   );

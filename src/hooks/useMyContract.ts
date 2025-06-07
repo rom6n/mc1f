@@ -21,7 +21,6 @@ export function useMyContract() {
     message_time: bigint;
   }>();
 
-
   const [balance, setBalance] = useState<null | bigint>(toNano(0));
 
   const myContract = useAsyncInitialize(async () => {
@@ -63,10 +62,16 @@ export function useMyContract() {
   }, [myContract]);
 
   return {
-    sendMessage: async (message_text: string) => {
-      await myContract?.sendMessageEdit(sender, toNano(0.01), message_text);
+    sendMessage: async () => {
+      const random = Math.floor(Math.random() * 167.3);
+      const new_message = `Чье то сообщение ${random * 10}`;
+      await myContract?.sendMessageEdit(sender, toNano(0.01), new_message);
     },
-    sendChangeAccess: async (new_access: number) => {
+    sendChangeAccess: async () => {
+      let new_access = 0;
+      if (contractData?.access === 0) {
+        new_access = 1;
+      }
       await myContract?.sendChangeAccess(sender, toNano(0.01), new_access);
     },
     sendDeleteMessage: async () => {
@@ -79,11 +84,11 @@ export function useMyContract() {
         transfer_to
       );
     },
-    sendDeposit: async (amount: bigint) => {
-      await myContract?.sendDeposit(sender, amount);
+    sendDeposit: async () => {
+      await myContract?.sendDeposit(sender, toNano(0.5));
     },
-    sendWithdraw: async (amount: bigint) => {
-      await myContract?.sendWithdraw(sender, toNano(0.01), amount);
+    sendWithdraw: async () => {
+      await myContract?.sendWithdraw(sender, toNano(0.01), toNano(0.5));
     },
     contract_balance: balance,
     ...contractData,
