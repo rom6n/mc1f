@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { fromNano } from "@ton/core";
 import { useTonConnect } from "../hooks/useTonConnect";
 
-
 function Contract() {
   const contract = useMyContract();
   const { connected } = useTonConnect();
@@ -120,7 +119,7 @@ function Contract() {
               <hr />
             </>
           ) : (
-            <p>Подключите кошелек, что бы увидеть действия</p>
+            <p>Подключите кошелёк, что бы увидеть действия</p>
           )}
         </div>
         <div></div>
