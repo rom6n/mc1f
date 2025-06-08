@@ -71,27 +71,133 @@ button:active {
   }
 }
 
-.button {
+.roll_button {
   background-color: rgb(33, 147, 217);
   border-radius: 10px;
   cursor: pointer;
   border-width: 0px;
   size-adjust: 10px;
   transition: background-color 1s;
-  padding: 10px 20px;
-  font-size: 20px;
+  padding: 12px 24px;
+  font-size: 40px;
   transition: transform 0.065s ease-in-out,
    background-color 0.15s ease-in-out;
 }
 
-.button:active {
+.roll_button:active {
   background-color: rgb(68, 183, 255);
   transform: scale(0.965);
 }
-.button:focus,
-.button:focus-visible {
+.roll_button:focus,
+.roll_button:focus-visible {
   outline: none;
 }
-.button:hover {
+.roll_button:hover {
   background-color: rgb(68, 183, 255);
+}
+
+.roll_button_div {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 47vh;
+  right: 52vw
+
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  top: 0;
+  left: 0;              
+  right: 0; 
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8vw;
+  gap: 3vw;
+
+  background-color: #1b1b1be9;
+  z-index: 1000;
+}
+
+.navbar_main {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+.navbar_about {
+  position: relative;
+  color: rgb(255, 255, 255);
+}
+.navbar_contacts {
+  position:relative;
+  color: rgb(255, 255, 255);
+}
+.navbar_contract {
+  position: relative;
+  color: rgb(255, 255, 255);
+}
+
+.navbar_main:hover,
+.navbar_about:hover,
+.navbar_contacts:hover,
+.navbar_contract:hover {
+  color: white;
+}
+
+.contract_info {
+  position: absolute;
+  top: 12vh;
+  right: 50vw
+}
+
+.contract_use {
+  position: absolute;
+  top: 12vh;
+  left: 55vw;
+}
+
+.contract {
+  position: absolute;
+  top: -18vh;
+  left: 1vw;
+}
+
+.tonconnect_button {
+  position: fixed;
+  top: 1.3vh;
+  right: 4vw;
+  z-index: 1001;
+}
+
+.navbar_button {
+  display: flex;
+  background-color: rgb(48, 48, 51);
+  width: 100px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: transform 0.10s ease-in-out;
+}
+
+.navbar_button:hover {
+  transform: scale(1.07);
+  color: white;
+  background-color: rgb(72, 72, 76);
+}
+
+.main_text {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  right: 10vw;
+}
+
+.roll_result {
+  position: absolute;
+  left: 50vw;
+  top: 43vh
 }

@@ -18,13 +18,15 @@ function MainPage() {
   }
   return (
     <>
-      <div>
+      <div className="main_text">
         <h1>Главная страница</h1>
       </div>
-      <div>
-        <button onClick={random_number} className="button">
-          Roll: {numberRolls}
-        </button>
+        <div className="roll_button_div">
+          <button onClick={random_number} className="roll_button">
+            Roll: {numberRolls}
+          </button>
+        </div>
+      <div className="roll_result">
         <h2>Выпало: {number}</h2>
         <h2>Наименьшее: {smallestNumber}</h2>
       </div>

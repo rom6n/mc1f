@@ -146,7 +146,7 @@ export class MyContract implements Contract {
   ) {
     const msg_body = beginCell()
       .storeUint(Opcodes.deposit, 32)
-      .storeUint(queryID ?? 0, 32)
+      .storeUint(queryID ?? 0, 64)
       .endCell();
     await provider.internal(via, {
       value,

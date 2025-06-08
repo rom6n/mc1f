@@ -65,20 +65,15 @@ function Contract() {
 
   return (
     <div>
-      <div>
-        <h1></h1>
-      </div>
-      <div>
+      <div className="tonconnect_button">
         <TonConnectButton />
       </div>
-      <div>
+      <div className="contract">
         <h1>Контракт</h1>
       </div>
-      <div>
+      <div className="contract_info">
         <h2>Информация</h2>
-      </div>
-      <hr />
-      <div>
+        <hr />
         <b>Сообщение</b>
         <div className="Hint">{lastMessage}</div>
         <div className="Hint">{lastTime}</div>
@@ -97,36 +92,33 @@ function Contract() {
         <hr />
         <b>Адрес контракта</b>
         <div className="Hint">{contract_address()}</div>
-        <hr />
-        <div>
-          <h2>Действия</h2>
-          {connected ? (
-            <>
-              <p>Отправить сообщение</p>
-              <button onClick={contract.sendMessage}>Отправить</button>
-              <hr />
+      </div>
+      <div className="contract_use">
+        <h2>Действия</h2>
+        {connected ? (
+          <>
+            <p>Отправить сообщение</p>
+            <button onClick={contract.sendMessage}>Отправить</button>
+            <hr />
 
-              <p>Удалить сообщение</p>
-              <button onClick={contract.sendDeleteMessage}>Удалить</button>
-              <hr />
+            <p>Удалить сообщение</p>
+            <button onClick={contract.sendDeleteMessage}>Удалить</button>
+            <hr />
 
-              <p>Изменить доступ</p>
-              <button onClick={contract.sendChangeAccess}>Изменить</button>
-              <hr />
+            <p>Изменить доступ</p>
+            <button onClick={contract.sendChangeAccess}>Изменить</button>
+            <hr />
 
-              <p>Внести TON в контракт</p>
-              <button onClick={contract.sendDeposit}>Внести 0.5 TON</button>
-              <hr />
+            <p>Внести TON в контракт</p>
+            <button onClick={contract.sendDeposit}>Внести 0.5 TON</button>
+            <hr />
 
-              <p>Вывести TON из контракта</p>
-              <button onClick={contract.sendWithdraw}>Вывести 0.5 TON</button>
-              <hr />
-            </>
-          ) : (
-            <p>Подключите кошелёк, что бы увидеть действия</p>
-          )}
-        </div>
-        <div></div>
+            <p>Вывести TON из контракта</p>
+            <button onClick={contract.sendWithdraw}>Вывести 0.5 TON</button>
+          </>
+        ) : (
+          <p>Подключите кошелёк, что бы увидеть действия</p>
+        )}
       </div>
     </div>
   );
