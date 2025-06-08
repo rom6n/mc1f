@@ -19,8 +19,12 @@ function Contract() {
   };
   useEffect(() => {
     if (contract) {
-      if (contract.message_text) {
-        setLastMessage(contract.message_text); // или то, что ты хочешь отображать
+      if (contract.message_text || contract.message_text === "") {
+        if (contract.message_text === "") {
+          setLastMessage("-");
+        } else {
+          setLastMessage(contract.message_text);
+        }
       }
 
       if (contract.recent_sender) {

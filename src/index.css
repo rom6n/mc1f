@@ -36,22 +36,26 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 10px;
+  border: 0px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgb(33, 147, 217);
   cursor: pointer;
   transition: border-color 0.25s;
+  transition: background-color 0.2s;
+  transition: transform 0.065s ease-in-out,
+   background-color 0.15s ease-in-out;
+   
 }
 button:hover {
-  border-color: #646cff;
+  background-color: rgb(68, 183, 255);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button:active {
+  background-color: rgb(68, 183, 255);
+  transform: scale(0.965);
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,4 +69,29 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.button {
+  background-color: rgb(33, 147, 217);
+  border-radius: 10px;
+  cursor: pointer;
+  border-width: 0px;
+  size-adjust: 10px;
+  transition: background-color 1s;
+  padding: 10px 20px;
+  font-size: 20px;
+  transition: transform 0.065s ease-in-out,
+   background-color 0.15s ease-in-out;
+}
+
+.button:active {
+  background-color: rgb(68, 183, 255);
+  transform: scale(0.965);
+}
+.button:focus,
+.button:focus-visible {
+  outline: none;
+}
+.button:hover {
+  background-color: rgb(68, 183, 255);
 }
