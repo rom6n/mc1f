@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #424242;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -46,16 +46,15 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   transition: background-color 0.2s;
-  transition: transform 0.065s ease-in-out,
-   background-color 0.15s ease-in-out;
-   
-}
-button:hover {
-  background-color: rgb(68, 183, 255);
-}
-button:active {
-  background-color: rgb(68, 183, 255);
-  transform: scale(0.965);
+  transition: transform 0.065s ease-in-out, background-color 0.15s ease-in-out;
+  &:hover {
+    background-color: rgb(68, 183, 255);
+    transform: scale(1.02);
+  }
+  &:active {
+    background-color: rgb(68, 183, 255);
+    transform: scale(0.965);
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -75,123 +74,179 @@ button:active {
   background-color: rgb(33, 147, 217);
   border-radius: 10px;
   cursor: pointer;
-  border-width: 0px;
   size-adjust: 10px;
   transition: background-color 1s;
   padding: 12px 24px;
   font-size: 40px;
-  transition: transform 0.065s ease-in-out,
-   background-color 0.15s ease-in-out;
-}
-
-.roll_button:active {
-  background-color: rgb(68, 183, 255);
-  transform: scale(0.965);
-}
-.roll_button:focus,
-.roll_button:focus-visible {
-  outline: none;
-}
-.roll_button:hover {
-  background-color: rgb(68, 183, 255);
+  transition: transform 0.2s, background-color 0.01s ease-in-out;
+  &:active {
+    background-color: rgb(0, 220, 8);
+    transform: scale(1.02);
+  }
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .roll_button_div {
   position: absolute;
   width: auto;
   height: auto;
-  top: 47vh;
-  right: 52vw
-
+  top: 340px;
+  right: 52vw;
 }
 
 .navbar {
   display: flex;
   position: fixed;
-  width: 100%;
-  height: 8%;
-  top: 0;
-  left: 0;              
-  right: 0; 
+  width: 40vw;
+  height: 50px;
+  top: 15px;
+  left: 3vw;
+  right: 0;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 8vw;
-  gap: 3vw;
+  justify-content: space-evenly;
+  gap: 0;
+  backdrop-filter: blur(7px);
+  border-radius: 100px;
 
-  background-color: #1b1b1be9;
+  background-color: #00000062;
   z-index: 1000;
 }
 
-.navbar_main {
+.navbar_text {
   position: relative;
-  color: rgb(255, 255, 255);
-  font-weight: 500;
-}
-.navbar_about {
-  position: relative;
-  color: rgb(255, 255, 255);
-}
-.navbar_contacts {
-  position:relative;
-  color: rgb(255, 255, 255);
-}
-.navbar_contract {
-  position: relative;
-  color: rgb(255, 255, 255);
+  color: rgb(146, 146, 146);
+  padding: 13px 18px;
+  border-radius: 9px;
+  white-space: nowrap;
+  transition: color 0.2s, text-shadow 0.2s;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  z-index: 2;
+  &:hover {
+    color: rgb(220, 220, 220);
+  }
 }
 
-.navbar_main:hover,
-.navbar_about:hover,
-.navbar_contacts:hover,
-.navbar_contract:hover {
-  color: white;
+.test_version_div {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 14px;
+  left: 44vw;
+  width: 146px;
+  height: 50px;
+  background-color: #00000062;
+  border-radius: 100px;
+  backdrop-filter: blur(7px);
+  z-index: 999;
+}
+
+.test_version {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 50%;
+  cursor: default;
+  text-shadow: 0 0 0px rgba(255, 0, 0, 0.414);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hr_contract {
+  position: fixed;
+  top: 15px;
+  left: 32vw;
+  width: 170px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(7px);
+  z-index: 999;
+}
+
+.hr_about {
+  position: fixed;
+  top: 15px;
+  left: 12vw;
+  width: 170px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(7px);
+  z-index: 999;
+}
+
+.hr_contacts {
+  position: fixed;
+  top: 15px;
+  left: 22vw;
+  width: 170px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(7px);
+  z-index: 999;
+}
+
+.hr_main {
+  position: fixed;
+  top: 15px;
+  left: 3vw;
+  width: 170px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(7px);
+  z-index: 999;
 }
 
 .contract_info {
   position: absolute;
-  top: 12vh;
-  right: 50vw
+  top: 87px;
+  right: 50vw;
 }
 
 .contract_use {
   position: absolute;
-  top: 12vh;
+  top: 88px;
   left: 55vw;
 }
 
 .contract {
   position: absolute;
-  top: -18vh;
+  bottom: -700px;
   left: 1vw;
+  right: 1vw;
+}
+
+.tonconnect_button_div {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 19.5px;
+  right: 4vw;
+  z-index: 1001;
+  background-color: #00000062;
+  border-radius: 100px;
+  backdrop-filter: blur(7px);
+  transition: width 0.2s;
+  &:active {
+    width: 145px;
+  }
 }
 
 .tonconnect_button {
-  position: fixed;
-  top: 1.3vh;
-  right: 4vw;
-  z-index: 1001;
-}
-
-.navbar_button {
-  display: flex;
-  background-color: rgb(48, 48, 51);
-  width: 100px;
-  height: 36px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  transition: transform 0.10s ease-in-out;
-}
-
-.navbar_button:hover {
-  transform: scale(1.07);
-  color: white;
-  background-color: rgb(72, 72, 76);
+  opacity: 44%;
 }
 
 .main_text {
   position: absolute;
-  top: 10vh;
+  top: 70px;
   left: 10vw;
   right: 10vw;
 }
@@ -199,5 +254,5 @@ button:active {
 .roll_result {
   position: absolute;
   left: 50vw;
-  top: 43vh
+  top: 313px;
 }

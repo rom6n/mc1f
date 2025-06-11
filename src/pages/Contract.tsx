@@ -65,8 +65,14 @@ function Contract() {
 
   return (
     <div>
-      <div className="tonconnect_button">
-        <TonConnectButton />
+      <div className="hr_contract" />
+      <div className="test_version_div">
+        <h3 className="test_version">🔴 TESTNET 🔴</h3>
+      </div>
+      <div className="tonconnect_button_div">
+        <div className="tonconnect_button">
+          <TonConnectButton />
+        </div>
       </div>
       <div className="contract">
         <h1>Контракт</h1>
@@ -95,6 +101,7 @@ function Contract() {
       </div>
       <div className="contract_use">
         <h2>Действия</h2>
+        <hr />
         {connected ? (
           <>
             <p>Отправить сообщение</p>
