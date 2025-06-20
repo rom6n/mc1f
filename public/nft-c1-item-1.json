@@ -1,0 +1,19 @@
+{
+  "name": "Ruslan NFT",
+  "image": "https://rom6n.github.io/mc1f/kisloe-lico.jpg",
+  "attributes": [
+    {
+      "trait_type": "Лицо",
+      "value": "Кислое"
+    },
+    {
+      "trait_type": "Волосы",
+      "value": "Черные"
+    },
+    {
+      "trait_type": "Ориентация",
+      "value": "Гей"
+    }
+  ],
+  "description": "Съел лимон, из за этого кислый такой"
+}
