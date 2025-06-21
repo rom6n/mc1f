@@ -1,0 +1,23 @@
+{
+  "name": "Аквамен #2",
+  "image": "https://rom6n.github.io/mc1f/chinese-child.jpg",
+  "attributes": [
+    {
+      "trait_type": "RARITY",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Вода",
+      "value": "Чистая 50/50"
+    },
+    {
+      "trait_type": "Унитаз",
+      "value": "Блестящий"
+    },
+    {
+      "trait_type": "Ребенок",
+      "value": "Китайский"
+    }
+  ],
+  "description": "Кристально чистый источник. Минеральные воды"
+}
