@@ -1,18 +1,19 @@
 import { TonConnectButton } from "@tonconnect/ui-react";
 import { useMyContract } from "../hooks/useMyContract";
 import { useEffect, useState } from "react";
-import { fromNano } from "@ton/core";
+import { Address, fromNano } from "@ton/core";
 import { useTonConnect } from "../hooks/useTonConnect";
 
 function Contract() {
   const contract = useMyContract();
-  const { connected } = useTonConnect();
+  const { connected, user_address } = useTonConnect();
   let [lastMessage, setLastMessage] = useState<string>("Загрузка...");
   let [lastSender, setLastSender] = useState<string>("Загрузка...");
   let [lastOwner, setLastOwner] = useState<string>("Загрузка...");
   let [lastTime, setLastTime] = useState<string>("Загрузка...");
   let [lastAccess, setLastAccess] = useState<string>("Загрузка...");
   let [lastBalance, setLastBalance] = useState<string>("Загрузка...");
+  let [userAddress, setUserAddress] = useState<string>("Загрузка...");
   const contract_address = () => {
     const address_c = "kQBmfyvtydi0NBEofnMQHnbPcQW23jsD4SS2EnpoPU4C9EBh";
     return `${address_c.slice(0, 5)}...${address_c.slice(43)}`;
@@ -63,6 +64,15 @@ function Contract() {
     }
   }, [contract]);
 
+  useEffect(() => {
+    if (user_address) {
+      const tonAddress = Address.parseRaw(user_address.replace("0x", ""));
+      setUserAddress(tonAddress.toString());
+    } else {
+      setUserAddress("Подключите кошелек");
+    }
+  }, [user_address]);
+
   return (
     <div>
       <div className="hr_contract" />
@@ -80,6 +90,7 @@ function Contract() {
       <div className="contract_info">
         <h2>Информация</h2>
         <hr />
+        <div className="Hint">Ваш адрес: {userAddress}</div>
         <b>Сообщение</b>
         <div className="Hint">{lastMessage}</div>
         <div className="Hint">{lastTime}</div>
