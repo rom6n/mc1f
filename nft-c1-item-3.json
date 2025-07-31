@@ -1,0 +1,23 @@
+{
+  "name": "Creep Ruslan #3",
+  "image": "https://rom6n.github.io/mc1f/creep-ruslan.jpg",
+  "attributes": [
+    {
+      "trait_type": "RARITY",
+      "value": "RARE"
+    },
+    {
+      "trait_type": "Лицо",
+      "value": "Криповое"
+    },
+    {
+      "trait_type": "Взгляд",
+      "value": "Тупой"
+    },
+    {
+      "trait_type": "Ориентация",
+      "value": "Гей"
+    }
+  ],
+  "description": "Ночью прийдет за тобой"
+}
